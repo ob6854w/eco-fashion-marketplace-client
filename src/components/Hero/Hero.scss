@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+  background-image: url("../../assets/images/banner.png");
+  height: 640px;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+
+  &__container {
+    width: 52%;
+    margin-left: 20px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      width: 26%;
+    }
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 30px;
+  }
+
+  &__button {
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+  }
+  &__button a {
+    color: #000;
+  }
+}
