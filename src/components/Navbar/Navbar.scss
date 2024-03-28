@@ -1,0 +1,52 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.navbar {
+  padding: 20px 10px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    &-icon {
+      font-size: 20px;
+      display: block;
+
+      @include tablet {
+        display: none;
+      }
+    }
+    &-menu {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+    &-menu a {
+      padding: 10px;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 45%;
+
+      @include desktop {
+        width: 30%;
+      }
+    }
+  }
+
+  &__icons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+
+    @include tablet {
+      width: 10%;
+    }
+    &-icon {
+      font-size: 20px;
+    }
+  }
+}
