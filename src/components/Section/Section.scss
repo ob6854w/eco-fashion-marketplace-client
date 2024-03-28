@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.section {
+  padding: 25px;
+
+  &__wrapper {
+    @include tablet {
+      width: 40%;
+    }
+  }
+  &__wrapper p {
+    font-size: 18px;
+    text-align: center;
+
+    @include tablet {
+      text-align: start;
+    }
+  }
+}
