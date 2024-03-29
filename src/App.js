@@ -5,6 +5,7 @@ import Main from "./components/Main/Main";
 import Products from "./components/Products/Products";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.scss";
+import Brand from "./components/Brand/Brand";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Section />
       <Main />
       <Products />
+      <Brand/>
     </div>
   );
 }
