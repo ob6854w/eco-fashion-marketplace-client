@@ -6,6 +6,7 @@ import Products from "./components/Products/Products";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.scss";
 import Brand from "./components/Brand/Brand";
+import Section2 from "./components/Section2/Section2";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Main />
       <Products />
       <Brand/>
+      <Section2/>
     </div>
   );
 }
