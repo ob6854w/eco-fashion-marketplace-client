@@ -1,5 +1,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .section {
   padding: 25px;
@@ -12,6 +13,7 @@
   &__wrapper p {
     font-size: 18px;
     text-align: center;
+    font-family: 'Avenir-demi';
 
     @include tablet {
       text-align: start;
