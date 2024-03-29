@@ -8,7 +8,7 @@ function Hero() {
           Elevate Your Style Timeless Fashion, Sustainable Choices
         </p>
         <button className="hero__button">
-          <a href="#brands">Shop Now</a>
+          <a href="#products">Shop Now</a>
         </button>
       </div>
     </div>

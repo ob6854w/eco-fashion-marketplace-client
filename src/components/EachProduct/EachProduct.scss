@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.products__item {
+  margin: 10px 5px;
+  text-align: center;
+
+  & img {
+    width: 100%;
+  }
+  &-text {
+    font-family: "Avenir-demi";
+    margin: 8px 0;
+  }
+  &-amount {
+    font-family: "Avenir-regular";
+    color: #7c3fff;
+  }
+}
