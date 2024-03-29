@@ -1,8 +1,10 @@
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero"
+import Hero from "./components/Hero/Hero";
+import Section from "./components/Section/Section";
+import Main from "./components/Main/Main";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.scss";
-import Section from "./components/Section/Section";
+
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <Navbar />
       <Hero/>
       <Section/>
+      <Main />
     </div>
   );
 }

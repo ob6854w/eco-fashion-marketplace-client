@@ -1,5 +1,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .hero {
   background-image: url("../../assets/images/banner.png");
@@ -21,6 +22,7 @@
 
   &__text {
     color: #fff;
+    font-family: Avenir-demi;
     font-size: 30px;
   }
 

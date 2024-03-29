@@ -1,0 +1,49 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/global" as *;
+
+.main {
+    &__container{
+        padding : 16px 16px;
+       
+
+        &-heading{
+            text-align: center;
+            font-family: 'Avenir-demi';
+            font-size: 18px;
+        }
+    }
+
+    &__card {
+        &-container{
+            display:flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+    }
+            &-wrapper {
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                width: 20%;
+                border-radius: 4px;
+                overflow:hidden;
+                background-color: #fff;
+
+                &--image{
+                    width:100%;
+                    height:auto;
+                }
+
+                &--content{
+                    padding:16px;
+                }
+
+                &--content p{
+                    margin-bottom: 8px;
+                    font-family: 'Avenir-regular';
+                    font-size: 18px;
+                    line-height: 1.3;
+                }
+    }      
+}
