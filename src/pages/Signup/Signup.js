@@ -3,7 +3,7 @@ import Input from "../../components/Input/Input";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { REACT_APP_BASE_URL } from "../../consts";
+import { REACT_APP_BASE_URL } from "../../const";
 
 function Signup() {
     const [error, setError] =useState(null);
@@ -14,7 +14,7 @@ function Signup() {
 
         try {
             await axios.post(`${REACT_APP_BASE_URL}/users/signup`, {
-              username: event.target.first_lastname.value,
+              username: event.target.username.value,
               name: event.target.name.value,
               email: event.target.email.value,
               password: event.target.password.value,
@@ -33,7 +33,7 @@ function Signup() {
         <main className="signup">
             <form className="signup__form" onSubmit={handleSubmit}>
                 <h1 className="signup__title">Sign Up</h1>
-                <Input type="text" username="first_lastname" label="First_Lastname" />
+                <Input type="text" username="first_Lastname" label="Username" />
                 <Input type="text" name="name" label="Name"/>
                 <Input type="text" name="email" label="Email" />
                 <Input type="password" name="password" label="Password" />

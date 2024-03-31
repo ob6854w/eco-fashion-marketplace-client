@@ -19,14 +19,7 @@ This project was created running npx create-react-app (eco-fashion marketplace)
 
 ### Features
 
-- As a user, I want to be able to access different sustainable fashion brands
-- As a user, I want to be able to have detailed information for each sustainable fashion brand including information about their mission, values, and their supply chain transparency
-- As a user, I want to be able to get a desired fashion styles made from eco-friendly materials
-- As a user, I want to be able to create an account 
-- As a user, I want to be able to login into my account
-- As a user, I want to be able to use the search and filter options to narrow down brands
-- As a user, I want to be able to leave reviews and ratings for brands they have purchased from, helping to build trust and credibility 
-- As a user, I want to be able to use this app on various devices and screen sizes to have a seamless user experience across desktop, tablet, and mobile devices
+
 
 ## Available Scripts
 

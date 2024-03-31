@@ -1,24 +1,32 @@
+import Home from "./pages/Home/Home";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import ContactUs from "./pages/ContactUs/ContactUs";
+import NotFound from "./pages/NotFound/NotFound";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Section from "./components/Section/Section";
-import Main from "./components/Main/Main";
-import Products from "./components/Products/Products";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.scss";
-import Brand from "./components/Brand/Brand";
-import Section2 from "./components/Section2/Section2";
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Section />
-      <Main />
-      <Products />
-      <Brand/>
-      <Section2/>
-    </div>
+    <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/aboutus" element={<AboutUs />}/>
+      <Route path="/contactus" element={<ContactUs />}/>
+      <Route path="*" element={<NotFound />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/product details/:id" element={<ProductDetails />} />
+    </Routes>
+    </BrowserRouter>
+  
+     
+    
   );
 }
 

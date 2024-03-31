@@ -3,7 +3,6 @@ import { CiShoppingCart } from "react-icons/ci";
 import { HiBars3 } from "react-icons/hi2";
 import { IoIosSearch } from "react-icons/io";
 import { FaPortrait } from "react-icons/fa";
-import { MenuItems } from "./MenuItems"
 // import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
