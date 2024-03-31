@@ -1,0 +1,33 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.aboutus {
+    &__container{
+        width: 100%;
+        margin: 0 auto;
+        // padding: 16px 16px;
+    }
+
+    &__content{
+        text-align:center;
+
+        h2 {
+            font-size: 18px;
+            font-family:'Avenir-bold';
+            margin-bottom : 20px
+            }
+        @include tablet {
+            font-size: 20px;
+        }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: bottom;
+    }
+        
+    }
+}
+
