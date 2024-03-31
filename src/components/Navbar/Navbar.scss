@@ -18,6 +18,7 @@
     }
     &-menu {
       display: none;
+      font-family: 'Avenir-regular';
       @include tablet {
         display: block;
       }

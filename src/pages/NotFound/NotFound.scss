@@ -1,0 +1,19 @@
+.main {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+
+    h1 {
+        font-family: 'Avenir-demi';
+        font-size: 24px;
+        color:black;
+    }
+
+    p {
+        font-family: 'Avenir-regular';
+        color:aqua;
+    }
+
+}

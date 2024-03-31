@@ -39,7 +39,7 @@ function Login() {
         {error && <div className="login__message">{error}</div>}
       </form>
 
-      <p>
+      <p className="login__link">
         Need an account? <Link to="/signup">Sign up</Link>
       </p>
     </main>
