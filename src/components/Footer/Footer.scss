@@ -1,0 +1,61 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.footer {
+  padding: 60px 20px 75px 20px;
+  background-color: #f5f4f4;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__container1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include desktop {
+      width: 45%;
+    }
+
+    &-list1 p {
+      margin-bottom: 10px;
+    }
+    &-list1-head {
+      margin-bottom: 15px;
+      color: #565656;
+      font-family: "Avenir-demi";
+    }
+  }
+  &__container2 {
+    width: 100%;
+
+    @include desktop {
+      width: 40%;
+    }
+    &-wrapper {
+      margin: 20px 0;
+    }
+    &-wrapper input {
+      background-color: unset;
+      padding: 10px;
+      border: 1px solid #565656;
+      outline: unset;
+      width: 90%;
+    }
+    &-wrapper p {
+      margin-top: 5px;
+    }
+
+    &-btn {
+      background-color: #000;
+      padding: 10px;
+      color: #fff;
+      border: unset;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+}
