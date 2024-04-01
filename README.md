@@ -19,6 +19,9 @@ This project was created running npx create-react-app (eco-fashion marketplace)
 
 ### Features
 
+- Display the different products for each brands
+- On clicking the cards for product will display the different products detail for each brands.
+- 
 
 
 ## Available Scripts
