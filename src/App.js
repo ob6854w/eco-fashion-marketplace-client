@@ -1,6 +1,6 @@
 import Home from "./pages/Home/Home";
-import AboutUs from "./pages/AboutUs/AboutUs";
-import ContactUs from "./pages/ContactUs/ContactUs";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
@@ -16,8 +16,8 @@ function App() {
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/aboutus" element={<AboutUs />}/>
-      <Route path="/contactus" element={<ContactUs />}/>
+      <Route path="/about" element={<About />}/>
+      <Route path="/contact" element={<Contact />}/>
       <Route path="*" element={<NotFound />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />

@@ -41,7 +41,7 @@
   &__icons-container {
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 30%;
 
     @include tablet {
       width: 10%;
@@ -49,5 +49,9 @@
     &-icon {
       font-size: 20px;
     }
+  }
+
+  &__button{
+     
   }
 }

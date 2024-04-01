@@ -1,7 +1,7 @@
-import "./ContactUs.scss";
+import "./Contact.scss";
 import Input from "../../components/Input/Input";
 
-function ContactUs() {
+function Contact() {
     return(
     <div className="contactus__container">
         <img/>
@@ -23,4 +23,4 @@ function ContactUs() {
     )
 }
 
-export default ContactUs;
+export default Contact;
