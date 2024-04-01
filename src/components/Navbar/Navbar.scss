@@ -7,6 +7,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    
 
     &-icon {
       font-size: 20px;
@@ -20,7 +21,10 @@
       display: none;
       font-family: 'Avenir-regular';
       @include tablet {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
       }
     }
     &-menu a {
@@ -38,13 +42,21 @@
     }
   }
 
+  &__link {
+     color :black;
+  }
+  &__link:hover, .active{
+    border-bottom:2px solid #808080;
+    cursor:pointer;
+  }
+
   &__icons-container {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 15%;
 
     @include tablet {
-      width: 10%;
+      width: 15%;
     }
     &-icon {
       font-size: 20px;
@@ -52,6 +64,18 @@
   }
 
   &__button{
-     
+    display:flex;
+    cursor: pointer; 
+    border-radius:5px;
+    font-family: 'Avenir-regular';
+    background: rgba(107, 106, 106, 0);
+    color: #808080;
+    border: none;
+    transition: .3s ease;
+    padding-right: 2px;  
+  }
+
+  &__button:hover{
+    background: rgba(158, 139, 139, 0.6)
   }
 }

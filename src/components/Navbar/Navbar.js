@@ -13,18 +13,28 @@ function Navbar() {
         <div className="navbar__container-wrapper">
           <img className="navbar__logo" src={logo} alt="logo" />
           <div className="navbar__container-menu">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Contact Us</a>
+            <Link to="/">
+            <a className="navbar__link active">Home</a> </Link>
+            <Link to="/about">
+            <a className="navbar__link">About</a>
+            </Link>
+            <Link to="/contact">
+            <a className="navbar__link">Contact</a>
+            </Link>
           </div>
         </div>
         <div className="navbar__icons-container">
           <IoIosSearch className="navbar__icons-container-icon" /> 
           <CiShoppingCart className="navbar__icons-container-icon" />
-          <Link to="/signup">
-          <button className="navbar___button">Signup</button>
-          </Link>
         </div>
+          <div className="navbar__button">
+          <Link to="/signup">
+          <button className="navbar___button-signup">Signup</button>
+          </Link>
+          <Link to="/login">
+          <button className="navbar___button-login">Login</button>
+          </Link>   
+        </div>     
       </div>
     </nav>
   );
