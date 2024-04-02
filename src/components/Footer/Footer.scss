@@ -16,10 +16,20 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
     @include desktop {
       width: 45%;
     }
 
+    &-list1 {
+      text-align: center;
+      width: 100%;
+      margin: 0 10px 20px 10px;
+      @include tablet {
+        width: unset;
+        text-align: start;
+      }
+    }
     &-list1 p {
       margin-bottom: 10px;
     }

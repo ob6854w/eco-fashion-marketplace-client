@@ -7,10 +7,13 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    
 
+    &-logo {
+      height: 25px;
+      width: 90px;
+    }
     &-icon {
-      font-size: 20px;
+      font-size: 30px;
       display: block;
 
       @include tablet {
@@ -19,12 +22,11 @@
     }
     &-menu {
       display: none;
-      font-family: 'Avenir-regular';
+      font-family: "Avenir-regular";
       @include tablet {
         display: flex;
         justify-content: center;
         align-items: center;
-
       }
     }
     &-menu a {
@@ -35,6 +37,7 @@
       display: flex;
       justify-content: center;
       width: 45%;
+      align-items: center;
 
       @include desktop {
         width: 30%;
@@ -43,39 +46,88 @@
   }
 
   &__link {
-     color :black;
+    color: black;
   }
-  &__link:hover, .active{
-    border-bottom:2px solid #808080;
-    cursor:pointer;
+  &__link:hover,
+  .active {
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
   }
 
   &__icons-container {
     display: flex;
-    justify-content: space-between;
-    width: 15%;
+    justify-content: flex-end;
+    width: 50%;
+    padding: 0 10px;
 
-    @include tablet {
-      width: 15%;
-    }
     &-icon {
-      font-size: 20px;
+      font-size: 30px;
+      cursor: pointer;
     }
   }
 
-  &__button{
-    display:flex;
-    cursor: pointer; 
-    border-radius:5px;
-    font-family: 'Avenir-regular';
+  &__button {
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Avenir-regular";
     background: rgba(107, 106, 106, 0);
     color: #808080;
     border: none;
-    transition: .3s ease;
-    padding-right: 2px;  
+    transition: 0.3s ease;
+    padding-right: 2px;
   }
 
-  &__button:hover{
-    background: rgba(158, 139, 139, 0.6)
+  &__button:hover {
+    background: rgba(158, 139, 139, 0.6);
+  }
+}
+
+.search {
+  // display: none;
+  transition: 0.4s;
+  border-radius: 20px;
+  align-items: center;
+  padding: 0 5px;
+
+  &__input {
+    border-radius: 20px;
+    padding: 5px 8px;
+    border: unset;
+    font-size: 15px;
+    // outline: unset;
+    @include tablet {
+      display: block !important;
+      width: 100% !important;
+    }
+  }
+}
+
+.open {
+  width: 100%;
+}
+.open2 {
+  border: 1px solid;
+  width: 100%;
+}
+.close2 {
+  width: 25%;
+}
+.close {
+  width: 0%;
+  display: none;
+}
+
+.big__screen {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+}
+.small__screen {
+  display: flex;
+
+  @include tablet{
+    display: none;
   }
 }

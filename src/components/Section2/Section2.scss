@@ -15,7 +15,12 @@
 
     & h3 {
       margin: 15px 0;
-      font-family: 'Avenir-regular';
+      font-family: 'Avenir-demi';
+    }
+
+    &-p2{
+        font-family: "Avenir-regular" !important;
+        text-align: center !important;
     }
   }
 }

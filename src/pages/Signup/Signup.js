@@ -13,19 +13,27 @@ function Signup() {
         event.preventDefault();
 
         try {
-            await axios.post(`${REACT_APP_BASE_URL}/users/signup`, {
+            const response = await axios.post(`${REACT_APP_BASE_URL}/users/signup`, {
               username: event.target.username.value,
               name: event.target.name.value,
               email: event.target.email.value,
               password: event.target.password.value,
             });
 
-            setSuccess(true);
-            setError(null);
-            event.target.reset();
-          } catch (error) {
-            setSuccess(false);
-            setError(error.response.data);
+            if (response.status===201){
+                setSuccess(true);
+                setError(null);
+                event.target.reset();
+            }
+         } catch (error) {
+            if (error.response && error.response.data){
+                setSuccess(false);
+                setError(error.response.data); 
+            } else {
+                console.error('An unexpected error occurred:', error);
+                setSuccess(false);
+                setError('An unexpected error occurred. Please try again later.'); 
+            }
           }
         };
 
@@ -33,7 +41,7 @@ function Signup() {
         <main className="signup">
             <form className="signup__form" onSubmit={handleSubmit}>
                 <h1 className="signup__title">Sign Up</h1>
-                <Input type="text" username="first_Lastname" label="Username" />
+                <Input type="text" username="username" label="Username" />
                 <Input type="text" name="name" label="Name"/>
                 <Input type="text" name="email" label="Email" />
                 <Input type="password" name="password" label="Password" />

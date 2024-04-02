@@ -5,7 +5,7 @@ const Section2 = () => {
     <div className="section">
       <div className="section__wrapper">
         <h3>The Art of Fewer Choices</h3>
-        <p>
+        <p  className="section__wrapper-p2">
           Opting for quality over quantity means selecting timeless, durable,
           and responsibly made items. This approach simplifies our lives and
           fosters a deeper appreciation for our surroundings. Emphasizing
