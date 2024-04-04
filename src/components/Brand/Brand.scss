@@ -21,6 +21,11 @@
       flex-direction: column;
       width: 80%;
       align-items: center;
+      justify-content: space-between;
+
+      & a{
+        margin: 15px 0;
+      }
   
       @include tablet {
         flex-direction: row;

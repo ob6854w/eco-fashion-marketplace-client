@@ -1,12 +1,18 @@
+import { Link } from "react-router-dom";
 import "./EachProduct.scss";
 
-function EachProduct({ text, amount, src }) {
+function EachProduct({ eachProduct,src }) {
   return (
-    <div className="products__item">
-      <img src={src} />
-      <p className="products__item-text">{text}</p>
-      <p className="products__item-amount">{amount}</p>
-    </div>
+    <Link to={`/product-details/${eachProduct.id}`}>
+      <div className="products__item">
+        <img src={src} />
+        <p className="products__item-text">{eachProduct.name}</p>
+        <p className="products__item-amount">{eachProduct.price}</p>
+        <p className="products__item-size">{eachProduct.sizes}</p>
+        <p className="products__item-colors">{eachProduct.colors}</p>
+        <p className="products__item-material">{eachProduct.material}</p>
+      </div>
+    </Link>
   );
 }
 

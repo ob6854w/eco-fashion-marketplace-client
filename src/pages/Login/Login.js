@@ -29,18 +29,18 @@ function Login() {
     return (
         <main className="login">
             <form className="login__form" onSubmit={handleSubmit}>
-        <h1 className="login__title">Log in</h1>
+        <h1 className="login__title">Login</h1>
 
         <Input type="text" name="username" label="Username" />
         <Input type="password" name="password" label="Password" />
 
-        <button className="login__button">Log in</button>
+        <button className="login__button">Login</button>
 
         {error && <div className="login__message">{error}</div>}
       </form>
 
       <p className="login__link">
-        Need an account? <Link to="/signup">Sign up</Link>
+        Need an account? <Link to="/signup">Signup</Link>
       </p>
     </main>
   );

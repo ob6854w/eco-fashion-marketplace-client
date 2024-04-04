@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.founder {
+  margin: 0 5px;
+
+  @include desktop{
+    margin: unset;
+  }
+
+  &__wrapper {
+    text-align: center;
+
+    & p {
+      margin: 10px 0;
+      font-family: "Avenir-demi";
+    }
+  }
+}

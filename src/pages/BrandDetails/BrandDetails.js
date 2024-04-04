@@ -1,23 +1,23 @@
 import img1 from "../../assets/images/img_1.png";
 import Button from "../../components/Button/Button";
 import { IoStarSharp } from "react-icons/io5";
-import "./ProductDetails.scss";
+import "./BrandDetails.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { REACT_APP_BASE_URL } from "../../const";
 
-const BrandDetails = ({eachProduct}) => {
-    const { id } = useParams();
+const BrandDetails = ({eachBrand}) => {
+  const { id } = useParams();
 
-    const [product, setProduct] = useState(null);
+  const [brand, setBrand] = useState(null);
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const result = await axios.get(`${REACT_APP_BASE_URL}/products/${id}`);
+        const result = await axios.get(`${REACT_APP_BASE_URL}/brands/${id}`);
 
-        setProduct(result.data);
+        setBrand(result.data);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +26,7 @@ const BrandDetails = ({eachProduct}) => {
     getProduct();
   }, [id]);
 
-  if (!product) {
+  if (!brand) {
     return <div>Loading...</div>;
   }
   return (
@@ -37,7 +37,7 @@ const BrandDetails = ({eachProduct}) => {
         </div>
         <div className="brand__details-wrapper">
           <div className="brand__details-text">
-            <h2>{product.name}</h2>
+            <h2>{brand.name}</h2>
             <div className="brand__details-stars">
               <IoStarSharp className="star" />
               <IoStarSharp className="star" />
@@ -46,11 +46,10 @@ const BrandDetails = ({eachProduct}) => {
               <IoStarSharp className="star" />
               <span>(15)</span>
             </div>
+            <p>Location: {brand.location}</p>
+             <a href={brand.website_url} target="_blank">Visit Brand Here</a>
             <p>
-              <span className="fprice">$69.00</span> <span className="nprice">{product.price}</span>
-            </p>
-            <p>
-              {product.description}
+              {brand.description}
             </p>
             <Button className="brand__details-btn">ADD TO CART</Button>
           </div>
@@ -66,7 +65,7 @@ const BrandDetails = ({eachProduct}) => {
             A key objective is engaging digital marketing customers and allowing
             them to interact with the brand through servicing and delivery of
             digital media. Information is easy to access at a fast rate through
-            the use of digital communications.{" "}
+            the use of digital communications.
           </p>
           <p>
             Users with access to the Internet can use many digital mediums, such

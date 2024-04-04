@@ -34,7 +34,7 @@ function Signup() {
                 setSuccess(false);
                 setError('An unexpected error occurred. Please try again later.'); 
             }
-          }
+        }
         };
 
     return(

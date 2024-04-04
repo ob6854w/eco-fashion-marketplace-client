@@ -29,10 +29,7 @@ function Navbar() {
         </div>
         <div className="navbar__icons-container">
           <div className={`search big__screen`}>
-            <IoIosSearch
-              className="navbar__icons-container-icon"
-              
-            />
+            <IoIosSearch className="navbar__icons-container-icon" />
             <input
               type="search"
               placeholder="Search"
@@ -52,7 +49,9 @@ function Navbar() {
               className={`search__input ${open ? "open" : "close"}`}
             />
           </div>
-          <CiShoppingCart className="navbar__icons-container-icon" />
+          <Link to="/add-to-cart">
+            <CiShoppingCart className="navbar__icons-container-icon" />
+          </Link>
         </div>
         {/* <div className="navbar__button">
           <Link to="/signup">

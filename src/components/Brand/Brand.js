@@ -11,19 +11,22 @@ import img8 from "../../assets/images/brand8.png";
 import "./Brand.scss";
 
 
-const Brand = () => {
+const Brand = ({brands}) => {
   return (
     <div className="brand">
         <h3 className="brand__title">Best Brands</h3>
         <div className="brand__wrapper">
-          <EachBrand text="Brand" src={img1}/>
-          <EachBrand text="Brand" src={img2}/>
+            {brands?.map((eachBrand)=>{
+                return <EachBrand text="Brand" src={img1} eachBrand={eachBrand}/>
+            })}
+          
+          {/* <EachBrand text="Brand" src={img2}/>
           <EachBrand text="Brand" src={img3}/>
           <EachBrand text="Brand" src={img4}/>
           <EachBrand text="Brand" src={img5}/>
           <EachBrand text="Brand" src={img6}/>
           <EachBrand text="Brand" src={img7}/>
-          <EachBrand text="Brand" src={img8}/>
+          <EachBrand text="Brand" src={img8}/> */}
         </div>
     </div>
   );

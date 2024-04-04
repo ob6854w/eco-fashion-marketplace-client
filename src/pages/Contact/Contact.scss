@@ -1,0 +1,97 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.contact {
+  background-image: url("../../assets/images/banner2.jpg");
+  height: 300px;
+  color: #fff;
+  font-family: "Avenir-regular";
+  display: flex;
+  align-items: end;
+
+  &__text {
+    margin: 0 0 20px 20px;
+    font-size: 33px;
+
+    @include tablet {
+      font-size: 38px;
+    }
+  }
+
+  &__wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: "Avenir-regular";
+
+    @include desktop {
+      flex-direction: row;
+    }
+    &2 {
+      margin-top: 30px;
+      width: 100%;
+      font-family: "Avenir-regular";
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      @include desktop {
+        margin-top: unset;
+        width: 20%;
+      }
+
+      &-cont {
+        margin-top: 15px;
+
+        & p{
+            margin: 10px 0;
+        }
+      }
+    }
+    &1 {
+      width: 100%;
+      font-family: "Avenir-regular";
+      @include desktop {
+        width: 75%;
+      }
+      & h3 {
+        font-size: 28px;
+      }
+
+      & p {
+        margin: 15px 0;
+      }
+    }
+  }
+}
+
+.form {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  & textarea {
+    height: 200px;
+    outline: unset;
+    padding: 10px;
+  }
+
+  &__input {
+    width: 45%;
+
+    & input {
+      outline: unset;
+    }
+  }
+
+  &__btn {
+    background-color: #024e82;
+    color: #fff;
+    padding: 20px;
+    border: unset;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+}

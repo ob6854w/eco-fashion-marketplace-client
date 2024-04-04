@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.cart{
+
+    &__cont{
+        
+    }
+    &__wrapper1, &__wrapper2{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #555555;
+
+        width: 80%;
+    }
+}
