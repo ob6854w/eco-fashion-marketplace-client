@@ -19,10 +19,17 @@ function Login() {
         password: event.target.password.value
       });
 
-      sessionStorage.authToken("token", response.data.token);
-      navigate("/");
+      if (response && response.data) {
+        // Store authentication token in session storage
+        sessionStorage.setItem("token", response.data.token);
+        // Redirect to home page or dashboard
+        navigate("/");
+      } else {
+        // Handle invalid response
+        setError("Invalid response received from server");
+      }
     } catch (error) {
-      setError(error.response.data);
+      setError("An error occurred during login. Please try again later.");
     }
   };
 

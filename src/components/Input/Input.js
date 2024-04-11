@@ -1,6 +1,6 @@
 import "./Input.scss";
 
-function Input({ label, name, type,className}) {
+function Input({ label, name, type, className = ""}) {
     return (
         <div className={`${className} field`}>
             <label htmlFor={name} className="field__label">

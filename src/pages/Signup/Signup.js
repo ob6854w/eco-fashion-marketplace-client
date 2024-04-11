@@ -28,7 +28,7 @@ function Signup() {
          } catch (error) {
             if (error.response && error.response.data){
                 setSuccess(false);
-                setError(error.response.data); 
+                setError(error.response.data.message); 
             } else {
                 console.error('An unexpected error occurred:', error);
                 setSuccess(false);
@@ -41,11 +41,11 @@ function Signup() {
         <main className="signup">
             <form className="signup__form" onSubmit={handleSubmit}>
                 <h1 className="signup__title">Sign Up</h1>
-                <Input type="text" username="username" label="Username" />
+                <Input type="text" name="username" label="Username" />
                 <Input type="text" name="name" label="Name"/>
                 <Input type="text" name="email" label="Email" />
                 <Input type="password" name="password" label="Password" />
-                <button className="signup__button">Sign up</button>  
+                <button type = "submit" className="signup__button">Sign up</button>  
 
                 {success && <div className="signup__message">Signed up!</div>}
                 {error && <div className="signup__message">{error}</div>}

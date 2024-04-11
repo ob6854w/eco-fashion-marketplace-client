@@ -1,12 +1,10 @@
 import EachProduct from "../EachProduct/EachProduct";
-import img1 from "../../assets/images/product 1.png";
-import img2 from "../../assets/images/product2.png";
-import img3 from "../../assets/images/product3.png";
-import img4 from "../../assets/images/product4.png";
+
 import "./Products.scss";
 
 function Products({ products }) {
-  const allProducts = products?.splice(0,6)
+  const allProducts = products?.splice(0, 6);
+
   return (
     <div className="products" id="products">
       <h3 className="products__title">Best Products</h3>
@@ -14,7 +12,7 @@ function Products({ products }) {
         {allProducts?.map((eachProduct) => {
           return (
             <EachProduct
-            src={img1}
+              src={eachProduct.image_url}
               eachProduct={eachProduct}
             />
           );

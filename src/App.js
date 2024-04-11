@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import BrandDetails from "./pages/BrandDetails/BrandDetails";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.scss";
 import Footer from "./components/Footer/Footer";
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
