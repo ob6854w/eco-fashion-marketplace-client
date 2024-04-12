@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.tab {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+
+  &__num {
+    background-color: #68503f;
+    color: #fff;
+    padding: 5px 5px 1px 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: "Avenir-regular";
+  }
+
+  &__title {
+    font-family: "Avenir-demi";
+  }
+}
+

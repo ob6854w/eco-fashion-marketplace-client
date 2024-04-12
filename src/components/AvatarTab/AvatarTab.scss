@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.avatar__tab{
+    & img{
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+    }
+}

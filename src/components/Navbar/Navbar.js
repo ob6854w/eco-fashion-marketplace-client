@@ -4,10 +4,11 @@ import { HiBars3 } from "react-icons/hi2";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
 import "./Navbar.scss";
+
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
     <nav className="navbar">
@@ -16,26 +17,47 @@ function Navbar() {
         <div className="navbar__container-wrapper">
           <img className="navbar__logo" src={logo} alt="logo" />
           <div className="navbar__container-menu">
-            <Link to="/">
-              <a className="navbar__link active">Home</a>{" "}
+            <Link
+              to="/"
+              className={`navbar__link ${active ? "active" : ""}`}
+              onClick={() => {
+                setActive(!false);
+              }}
+            >
+              Home
             </Link>
-            <Link to="/about">
-              <a className="navbar__link">About</a>
+            <Link
+              to="/about"
+              className={`navbar__link ${active ? "active" : ""}`}
+              onClick={() => {
+
+                setActive(!false);
+              }}
+            >
+              About
             </Link>
-            <Link to="/contact">
-              <a className="navbar__link">Contact</a>
+            <Link
+              to="/contact"
+              className={`navbar__link ${active ? "active" : ""}`}
+              onClick={() => {
+
+                setActive(!false);
+              }}
+            >
+              Contact
             </Link>
           </div>
         </div>
         <div className="navbar__icons-container">
-          <div className={`search big__screen`}>
+          <Link to="/brands_products" className="navbar__link">Marketplace</Link>
+          {/* <div className={`search big__screen`}>
             <IoIosSearch className="navbar__icons-container-icon" />
             <input
               type="search"
               placeholder="Search"
               className={`search__input`}
             />
-          </div>
+          </div> */}
           <div className={`search small__screen ${open ? "open2" : "close2"}`}>
             <IoIosSearch
               className="navbar__icons-container-icon"
@@ -49,8 +71,8 @@ function Navbar() {
               className={`search__input ${open ? "open" : "close"}`}
             />
           </div>
-          <Link to="/add-to-cart">
-            <CiShoppingCart className="navbar__icons-container-icon" />
+          <Link to="/add-to-cart" className="navbar__icons-container-icon">
+            <CiShoppingCart />
           </Link>
         </div>
         {/* <div className="navbar__button">

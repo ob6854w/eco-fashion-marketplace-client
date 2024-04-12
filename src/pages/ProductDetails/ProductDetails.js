@@ -2,15 +2,15 @@ import img1 from "../../assets/images/img_1.png";
 import Button from "../../components/Button/Button";
 import { IoStarSharp } from "react-icons/io5";
 import "./ProductDetails.scss";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { REACT_APP_BASE_URL } from "../../const";
 
-const BrandDetails = ({eachProduct}) => {
-    const { id } = useParams();
+const BrandDetails = ({ eachProduct }) => {
+  const { id } = useParams();
 
-    const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -29,11 +29,12 @@ const BrandDetails = ({eachProduct}) => {
   if (!product) {
     return <div>Loading...</div>;
   }
+  console.log(product);
   return (
     <>
       <div className="brand__details">
         <div className="brand__details-image">
-          <img src={img1} alt="" />
+          <img src={product.image_url} alt="" />
         </div>
         <div className="brand__details-wrapper">
           <div className="brand__details-text">
@@ -47,12 +48,26 @@ const BrandDetails = ({eachProduct}) => {
               <span>(15)</span>
             </div>
             <p>
-              <span className="fprice">$69.00</span> <span className="nprice">{product.price}</span>
+              <span className="fprice">$69.00</span>{" "}
+              <span className="nprice">{product.price}</span>
             </p>
-            <p>
-              {product.description}
+            <p>{product.description}</p>
+            <p className="products__item-category">
+              <span style={{ fontWeight: "bold" }}>Category:</span> {product.category}
             </p>
-            <Button className="brand__details-btn">ADD TO CART</Button>
+            <p className="products__item-size">
+              <span style={{ fontWeight: "bold" }}>Sizes:</span> {product.sizes}
+            </p>
+            <p className="products__item-colors">
+              <span style={{ fontWeight: "bold" }}>Variants:</span>{" "}
+              {product.colors}
+            </p>
+            <p className="products__item-material">
+              <span style={{ fontWeight: "bold" }}>Material:</span>{" "}
+              {product.material}
+            </p>
+            <Link to="/add-to-cart"><Button className="brand__details-btn">ADD TO CART</Button></Link>
+            
           </div>
         </div>
       </div>

@@ -87,11 +87,18 @@
   }
 
   &__btn {
-    background-color: #024e82;
+    background-color: #68503f;
     color: #fff;
     padding: 20px;
     border: unset;
     margin-top: 20px;
     cursor: pointer;
+
+    &:hover {
+      background-color: unset;
+      border: 1px solid #68503f;
+      color: #000;
+      transition: 1s;
+    }
   }
 }

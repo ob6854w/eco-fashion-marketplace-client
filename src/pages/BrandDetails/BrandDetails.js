@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { REACT_APP_BASE_URL } from "../../const";
 
-const BrandDetails = ({eachBrand}) => {
+const BrandDetails = ({ eachBrand }) => {
   const { id } = useParams();
 
   const [brand, setBrand] = useState(null);
@@ -47,10 +47,10 @@ const BrandDetails = ({eachBrand}) => {
               <span>(15)</span>
             </div>
             <p>Location: {brand.location}</p>
-             <a href={brand.website_url} target="_blank">Visit Brand Here</a>
-            <p>
-              {brand.description}
-            </p>
+            <a href={brand.website_url} target="_blank" rel="noreferrer">
+              Visit Brand Here
+            </a>
+            <p>{brand.description}</p>
             <Button className="brand__details-btn">ADD TO CART</Button>
           </div>
         </div>

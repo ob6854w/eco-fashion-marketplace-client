@@ -60,12 +60,19 @@
     }
 
     &-btn {
-      background-color: #000;
-      padding: 10px;
+      background-color: #68503f;
       color: #fff;
+      padding: 10px;
       border: unset;
       letter-spacing: 1px;
       cursor: pointer;
+
+      &:hover {
+        background-color: unset;
+        border: 1px solid #68503f;
+        color: #000;
+        transition: 1s;
+      }
     }
   }
 }

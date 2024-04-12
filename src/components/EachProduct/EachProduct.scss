@@ -3,11 +3,13 @@
 @use "../../styles/partials/typography" as *;
 
 .products__item {
-  margin: 10px 5px;
+  width: 100%;
+  height: 100%;
   text-align: center;
 
   & img {
     width: 100%;
+    height: 70%;
   }
   &-text {
     font-family: "Avenir-demi";
@@ -17,4 +19,9 @@
     font-family: "Avenir-regular";
     color: #7c3fff;
   }
+}
+
+.products__link{
+  width: 25%;
+  margin: 5px;
 }

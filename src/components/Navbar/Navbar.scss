@@ -35,7 +35,7 @@
 
     &-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       width: 45%;
       align-items: center;
 
@@ -47,6 +47,7 @@
 
   &__link {
     color: black;
+    font-family: "Avenir-regular";
   }
   &__link:hover,
   .active {
@@ -59,10 +60,17 @@
     justify-content: flex-end;
     width: 50%;
     padding: 0 10px;
+    align-items: center;
+
+    & a{
+      margin-right: 20px;
+      padding: 10px;
+    }
 
     &-icon {
       font-size: 30px;
       cursor: pointer;
+      color: #000;
     }
   }
 
@@ -84,7 +92,6 @@
 }
 
 .search {
-  // display: none;
   transition: 0.4s;
   border-radius: 20px;
   align-items: center;
@@ -95,7 +102,6 @@
     padding: 5px 8px;
     border: unset;
     font-size: 15px;
-    // outline: unset;
     @include tablet {
       display: block !important;
       width: 100% !important;
@@ -127,7 +133,7 @@
 .small__screen {
   display: flex;
 
-  @include tablet{
+  @include tablet {
     display: none;
   }
 }

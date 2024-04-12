@@ -4,7 +4,7 @@
 
 .hero {
   background-image: url("../../assets/images/banner.png");
-  height: 640px;
+  height: 540px;
   background-position: top;
   background-size: cover;
   display: flex;
@@ -24,14 +24,27 @@
     color: #fff;
     font-family: Avenir-demi;
     font-size: 30px;
+
+    @include desktop {
+      font-size: 35px;
+    }
   }
 
   &__button {
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     margin-top: 20px;
+    border: unset;
+    background-color: #68503f;
+    color: #fff;
+    &:hover {
+      background-color: unset;
+      border: 1px solid #68503f;
+      color: #000;
+      transition: 1s;
+    }
   }
   &__button a {
-    color: #000;
+    color: #fff;
   }
 }

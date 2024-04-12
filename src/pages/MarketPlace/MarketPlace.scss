@@ -1,0 +1,76 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.search2 {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  &_cont {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin: 20px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 0 10px;
+
+    & input {
+      padding: 10px;
+      background-color: unset;
+      width: 100%;
+      outline: unset;
+      border-radius: 10px;
+      border: unset;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    border: unset;
+    background-color: unset;
+  }
+
+  &__icon {
+    font-size: 18px;
+  }
+
+  &__tab {
+    display: flex;
+    justify-content: center;
+
+    &-wrapper {
+      width: 80%;
+      display: flex;
+    }
+  }
+
+  &__brand_product {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 80%;
+
+      @include tablet {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.active_tab {
+  border-bottom: 1px solid #68503f;
+}

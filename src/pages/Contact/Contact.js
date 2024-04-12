@@ -32,7 +32,7 @@ function Contact() {
         <div className="contact__wrapper2">
           <div className="contact__wrapper2-cont">
             <h3>Visit Us</h3>
-            <p>105674, Essence Palace, Windsor, Canada Phone: +22603998987</p>
+            <p>UET Lahore, Punjab, Pakistan Phone: +923039898987</p>
           </div>
           <div className="contact__wrapper2-cont">
             <h3>Get in Touch</h3>
