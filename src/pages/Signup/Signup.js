@@ -1,7 +1,7 @@
 import "./Signup.scss";
 import Input from "../../components/Input/Input";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { REACT_APP_BASE_URL } from "../../const";
 
@@ -36,6 +36,12 @@ function Signup() {
             }
         }
         };
+
+    useEffect(() => { 
+        if (success) {
+           window.location.href = "/login";
+        }
+    }, [success])
 
     return(
         <main className="signup">

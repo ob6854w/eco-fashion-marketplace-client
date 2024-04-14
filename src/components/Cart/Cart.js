@@ -1,8 +1,18 @@
 import Button from "../Button/Button";
-import img from "../../assets/images/brand4.png"
+import img from "../../assets/images/brand4.png";
 import "./Cart.scss";
+import useCurrentUser from "../../hooks/useCurrentUser";
+import { useEffect } from "react";
 
 const Cart = () => {
+  const { isNotLoggedIn } = useCurrentUser();
+
+  useEffect(() => {
+    if (isNotLoggedIn) {
+      window.location.href = "/login";
+    }
+  }, [isNotLoggedIn]);
+
   return (
     <>
       <div className="cart">
@@ -17,7 +27,7 @@ const Cart = () => {
           </div>
           <div className="cart__wrapper2">
             <Button className="cart__wrapper2-btn">X</Button>
-            <img src={img} alt="" className="cart__wrapper2-img"/>
+            <img src={img} alt="" className="cart__wrapper2-img" />
             <p>Plain White Shirt</p>
             <p>$59.00</p>
             <p>1</p>

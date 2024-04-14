@@ -4,26 +4,24 @@ import { Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
-    const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  
+  const [error, setError] = useState(null);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const response = await axios.post(`${REACT_APP_BASE_URL}/users/login`, {
         username: event.target.username.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       });
 
       if (response && response.data) {
         // Store authentication token in session storage
         sessionStorage.setItem("token", response.data.token);
         // Redirect to home page or dashboard
-        navigate("/");
+        window.location.href = "/";
       } else {
         // Handle invalid response
         setError("Invalid response received from server");
@@ -33,9 +31,9 @@ function Login() {
     }
   };
 
-    return (
-        <main className="login">
-            <form className="login__form" onSubmit={handleSubmit}>
+  return (
+    <main className="login">
+      <form className="login__form" onSubmit={handleSubmit}>
         <h1 className="login__title">Login</h1>
 
         <Input type="text" name="username" label="Username" />
@@ -54,4 +52,3 @@ function Login() {
 }
 
 export default Login;
-
