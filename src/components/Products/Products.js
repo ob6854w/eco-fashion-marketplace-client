@@ -1,5 +1,4 @@
 import EachProduct from "../EachProduct/EachProduct";
-import img1 from "../../assets/images/product 1.png";
 import "./Products.scss";
 
 function Products({ products }) {

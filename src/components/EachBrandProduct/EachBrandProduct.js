@@ -15,7 +15,6 @@ const EachBrandProduct = ({
   console.log(eachBrand)
   return (
     <div className={className}>
-      {/* <a className={className} href={href}> */}
       <img src={img} alt="" className="each__brand_img" />
       <div className="each__brand_wrapper">
         <AvatarTab
@@ -35,7 +34,6 @@ const EachBrandProduct = ({
           </div>
         </div>
       </div>
-      {/* </a> */}
     </div>
   );
 };
