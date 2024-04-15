@@ -43,8 +43,6 @@ const Cart = () => {
     return acc + parseFloat(item.price) * item.quantity;
   }, 0);
 
-  const handleRemoveItem = (id) => {};
-
   return (
     <>
       <div className="cart">

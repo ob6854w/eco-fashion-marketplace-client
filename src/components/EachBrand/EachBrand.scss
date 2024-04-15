@@ -3,7 +3,6 @@
 @use "../../styles/partials/typography" as *;
 
 .brand__item {
-  position: relative;
   cursor: pointer;
   width: 80%;
 
@@ -13,8 +12,9 @@
   }
 
   &-cont {
-    &:hover {
       background-color: #000;
+
+    &:hover {
       opacity: 0.8;
     }
   }
@@ -22,9 +22,14 @@
     width: 100%;
   }
   &-text {
-    font-size: 20px;
-    position: absolute;
-    top: 45%;
-    right: 45%;
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+.brand {
+  &__item-link {
+    text-decoration: none;
+    color: #fff;
   }
 }

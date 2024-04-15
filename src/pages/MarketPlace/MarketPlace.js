@@ -1,45 +1,29 @@
 import Button from "../../components/Button/Button";
 import Tab from "../../components/Tab/Tab";
-import EachBrandProduct from "../../components/EachBrandProduct/EachBrandProduct";
-import img from "../../assets/images/brand4.png";
-import avt from "../../assets/images/founder1.png";
-import { REACT_APP_BASE_URL } from "../../const";
 import { CiSearch } from "react-icons/ci";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import "./MarketPlace.scss";
+import useProductsAndBrands from "../../hooks/useProductsAndBrands";
+import Products from "../../components/Products/Products";
+import Brand from "../../components/Brand/Brand";
 
 const MarketPlace = () => {
   const [activeTab, setActiveTab] = useState(true);
-  const [brands, setBrands] = useState(null);
-  const [products, setProducts] = useState(null);
   const [tab1, setTab1] = useState("brands")
 
+  const { products, brands,
+    query,
+    handleQueryChange,
+    handleIsSearchByBrand
+  } = useProductsAndBrands();
+
+
   useEffect(() => {
-    const fetchBrands = async () => {
-      try {
-        const response = await axios.get(`${REACT_APP_BASE_URL}/brands`);
+    handleIsSearchByBrand(tab1 ? true : false);
+  }, [tab1]);
+  
 
-        console.log(response.data);
-        setBrands(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(`${REACT_APP_BASE_URL}/products`);
-
-        console.log(response.data);
-        setProducts(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchBrands();
-    fetchProducts();
-  }, []);
+  
   return (
     <>
       <div className="search2">
@@ -51,7 +35,11 @@ const MarketPlace = () => {
             </p>
           </div>
           <div className="search2__wrapper">
-            <input type="text" placeholder="Search your favourite brands" />
+            <input type="text" placeholder={ `Search your favourite ${tab1 ? "brands" : "products"}` }
+              value={query}
+              onChange={handleQueryChange}
+            />
+            
             <Button className="search2__btn">
               <CiSearch className="search2__icon" />
             </Button>
@@ -62,7 +50,7 @@ const MarketPlace = () => {
         <div className="search2__tab-wrapper">
           <Tab
             tabTitle="Brands"
-            num="302"
+            num={brands?.length}
             onClick={() => {
               setActiveTab(!activeTab);
               setTab1(!tab1);
@@ -72,7 +60,7 @@ const MarketPlace = () => {
           />
           <Tab
             tabTitle="Products"
-            num="67"
+            num={products?.length}
             onClick={() => {
               setActiveTab(!activeTab);
               setTab1(!tab1);
@@ -84,115 +72,7 @@ const MarketPlace = () => {
       </div>
       <div className="search2__brand_product">
         <div className="search2__brand_product-wrapper">
-        {tab1 ? brands?.map((eachBrand) => {
-          console.log(eachBrand)
-            return (
-              <EachBrandProduct
-              eachBrand={eachBrand}
-                img={img}
-                img2={avt}
-                avatarName=""
-                price="$50"
-                className="each__brand"
-              />
-            );
-          }) : products?.map((eachProduct) => {
-            console.log(eachProduct)
-            return (
-              <EachBrandProduct
-              eachProduct={eachProduct}
-                img={img}
-                img2={avt}
-                avatarName=""
-                price="$50"
-                className="each__brand"
-              />
-            );
-          }) }  
-          {/* <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          />
-          <EachBrandProduct
-            img={img}
-            img2={avt}
-            avatarName=""
-            price="$50"
-            className="each__brand"
-          /> */}
+          {tab1 ? <Brand brands={brands} /> : <Products products={products} isFull />}
         </div>
       </div>
     </>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useCurrentUser from "../../hooks/useCurrentUser";
 import "./Navbar.scss";
+import useCart from "../../hooks/useCart";
 
 const LINKS = [
   {
@@ -31,6 +32,7 @@ const LINKS = [
 ];
 
 function Navbar() {
+  const { data: cartData } = useCart();
   const [links, setLinks] = useState(LINKS);
 
   const [open, setOpen] = useState(false);
@@ -87,14 +89,7 @@ function Navbar() {
           >
             Marketplace
           </Link>
-          {/* <div className={`search big__screen`}>
-            <IoIosSearch className="navbar__icons-container-icon" />
-            <input
-              type="search"
-              placeholder="Search"
-              className={`search__input`}
-            />
-          </div> */}
+
           <div className={`search small__screen ${open ? "open2" : "close2"}`}>
             <IoIosSearch
               className="navbar__icons-container-icon"
@@ -110,16 +105,11 @@ function Navbar() {
           </div>
           <Link to="/add-to-cart" className="navbar__icons-container-icon">
             <CiShoppingCart />
+            <div className="navbar__icons-container-cart-count">
+              {cartData.data?.length}
+            </div>
           </Link>
         </div>
-        {/* <div className="navbar__button">
-          <Link to="/signup">
-            <button className="navbar___button-signup">Signup</button>
-          </Link>
-          <Link to="/login">
-            <button className="navbar___button-login">Login</button>
-          </Link>
-        </div> */}
       </div>
     </nav>
   );

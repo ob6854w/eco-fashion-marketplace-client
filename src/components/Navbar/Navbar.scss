@@ -137,3 +137,27 @@
     display: none;
   }
 }
+
+.navbar__icons-container {
+
+    &-icon {
+position: relative;
+    }
+
+    &-cart-count {
+      position: absolute;
+      top: -3px;
+      right: 13px;
+      background: #ff0000;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+}
