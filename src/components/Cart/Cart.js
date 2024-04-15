@@ -3,9 +3,20 @@ import img from "../../assets/images/brand4.png";
 import "./Cart.scss";
 import useCart from "../../hooks/useCart";
 import formatToCurrency from "../../utils/formatToCurrency";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Cart = () => {
-  const { data, handleUpdateCartItem, handleRemoveCartItem } = useCart();
+  const { data, handleUpdateCartItem, handleRemoveCartItem, isNotLoggedIn } =
+    useCart();
+  const navigate = useNavigate()
+
+    useEffect(() => {
+      if (isNotLoggedIn) {
+        navigate("/login");
+      }
+    }, [isNotLoggedIn]);
+
 
   if (data.isLoading) {
     return (

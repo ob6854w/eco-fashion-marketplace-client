@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import useCurrentUser from "./useCurrentUser";
-import { getAllUserCartItems, updateCartItem, removeCartItem, createCartItem  } from "../services/cart";
+import {
+  getAllUserCartItems,
+  updateCartItem,
+  removeCartItem,
+  createCartItem,
+} from "../services/cart";
 
 function useCart() {
   const { isNotLoggedIn, userData } = useCurrentUser();
-
-  useEffect(() => {
-    if (isNotLoggedIn) {
-      window.location.href = "/login";
-    }
-  }, [isNotLoggedIn]);
 
   const [data, setData] = useState({
     data: null,
@@ -62,22 +61,22 @@ function useCart() {
     }
   };
 
-  const handleAddToCart = async (productId) => { 
+  const handleAddToCart = async (productId) => {
     try {
-         console.log("useCart.handleAddToCart -> data", );
+      console.log("useCart.handleAddToCart -> data");
       await createCartItem(userData.id, productId);
 
       const newCartItem = {
         user_id: userData.id,
         product_id: productId,
         quantity: 1,
-      }
+      };
 
       fectchUserCartItems();
     } catch (error) {
       setData({ data: null, isLoading: false, error: error.message });
     }
-  }
+  };
 
   useEffect(() => {
     if (!userData) return;
@@ -89,7 +88,8 @@ function useCart() {
     data,
     handleUpdateCartItem,
     handleRemoveCartItem,
-    handleAddToCart
+    handleAddToCart,
+    isNotLoggedIn,
   };
 }
 
