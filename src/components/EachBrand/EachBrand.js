@@ -7,7 +7,7 @@ const EachBrand = ({ src, eachBrand }) => {
       <div className="brand__item">
         <div className="brand__item-cont">
           <img src={src} />
-          <p className="brand__item-text">{eachBrand.name}</p>
+          {/* <p className="brand__item-text">{eachBrand.name}</p> */}
         </div>
       </div>
     </a>

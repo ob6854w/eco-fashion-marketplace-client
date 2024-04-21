@@ -1,41 +1,231 @@
+// @use "../../styles/partials/variables" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .navbar {
+//   padding: 20px 10px;
+
+//   &__container {
+//     display: flex;
+//     justify-content: space-between;
+
+//     &-logo {
+//       height: 25px;
+//       width: 90px;
+//     }
+//     &-icon {
+//       font-size: 30px;
+//       display: block;
+
+//       @include tablet {
+//         display: none;
+//       }
+//     }
+//     &-menu {
+//       display: none;
+//       font-family: "Avenir-regular";
+//       @include tablet {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//       }
+//     }
+//     &-menu a {
+//       padding: 10px;
+//     }
+
+//     &-wrapper {
+//       display: flex;
+//       justify-content: space-around;
+//       width: 45%;
+//       align-items: center;
+
+//       @include desktop {
+//         width: 30%;
+//       }
+//     }
+//   }
+
+//   &__link {
+//     color: black;
+//     font-family: "Avenir-regular";
+//   }
+//   &__link:hover,
+//   .active {
+//     border-bottom: 2px solid #808080;
+//     cursor: pointer;
+//   }
+
+//   &__icons-container {
+//     display: flex;
+//     justify-content: flex-end;
+//     width: 50%;
+//     padding: 0 10px;
+//     align-items: center;
+
+//     & a{
+//       margin-right: 20px;
+//       padding: 10px;
+//     }
+
+//     &-icon {
+//       font-size: 30px;
+//       cursor: pointer;
+//       color: #000;
+//     }
+//   }
+
+//   &__button {
+//     display: flex;
+//     cursor: pointer;
+//     border-radius: 5px;
+//     font-family: "Avenir-regular";
+//     background: rgba(107, 106, 106, 0);
+//     color: #808080;
+//     border: none;
+//     transition: 0.3s ease;
+//     padding-right: 2px;
+//   }
+
+//   &__button:hover {
+//     background: rgba(158, 139, 139, 0.6);
+//   }
+// }
+
+// .search {
+//   transition: 0.4s;
+//   border-radius: 20px;
+//   align-items: center;
+//   padding: 0 5px;
+
+//   &__input {
+//     border-radius: 20px;
+//     padding: 5px 8px;
+//     border: unset;
+//     font-size: 15px;
+//     @include tablet {
+//       display: block !important;
+//       width: 100% !important;
+//     }
+//   }
+// }
+
+// .open {
+//   width: 100%;
+// }
+// .open2 {
+//   border: 1px solid;
+//   width: 100%;
+// }
+// .close2 {
+//   width: 25%;
+// }
+// .close {
+//   width: 0%;
+//   display: none;
+// }
+
+// .big__screen {
+//   display: none;
+//   @include tablet {
+//     display: flex;
+//   }
+// }
+// .small__screen {
+//   display: flex;
+
+//   @include tablet {
+//     display: none;
+//   }
+// }
+
+// .navbar__icons-container {
+
+//     &-icon {
+// position: relative;
+//     }
+
+//     &-cart-count {
+//       position: absolute;
+//       top: -3px;
+//       right: 13px;
+//       background: #ff0000;
+//       color: white;
+//       border-radius: 50%;
+//       font-size: 12px;
+//       font-weight: bold;
+//       width: 20px;
+//       height: 20px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//     }
+  
+// }
+
+
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
 .navbar {
-  padding: 20px 10px;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #fff;
+
+
+  @include tablet {
+    padding: 20px 10px;
+  }
+
+  &__last-cont {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+
+    @include tablet{
+      width: unset;
+    }
+  }
 
   &__container {
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     &-logo {
       height: 25px;
       width: 90px;
     }
+
     &-icon {
       font-size: 30px;
       display: block;
+
 
       @include tablet {
         display: none;
       }
     }
+
     &-menu {
       display: none;
       font-family: "Avenir-regular";
+
       @include tablet {
         display: flex;
         justify-content: center;
         align-items: center;
       }
     }
+
     &-menu a {
       padding: 10px;
     }
 
     &-wrapper {
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       width: 45%;
       align-items: center;
 
@@ -48,12 +238,25 @@
   &__link {
     color: black;
     font-family: "Avenir-regular";
+    padding: 15px;
+
+    &:hover,
+    .active {
+      border-bottom: 2px solid #808080;
+      cursor: pointer;
+    }
+
+    &:focus{
+      border: 2px solid #808080;
+      border-radius: 30px;
+
+      @include tablet{
+        border-bottom: 2px solid #808080;
+        border-radius: unset;
+      }
+    }
   }
-  &__link:hover,
-  .active {
-    border-bottom: 2px solid #808080;
-    cursor: pointer;
-  }
+
 
   &__icons-container {
     display: flex;
@@ -62,10 +265,6 @@
     padding: 0 10px;
     align-items: center;
 
-    & a{
-      margin-right: 20px;
-      padding: 10px;
-    }
 
     &-icon {
       font-size: 30px;
@@ -89,6 +288,29 @@
   &__button:hover {
     background: rgba(158, 139, 139, 0.6);
   }
+
+  &__small-screen {
+    position: absolute;
+    top: 44px;
+    z-index: 10;
+    background-color: #fff;
+    width: 100%;
+
+    &-cont {
+
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 20px 0;
+      background-color: #fff;
+      left: 30px;
+      right: 30px;
+
+
+    }
+  }
 }
 
 .search {
@@ -102,6 +324,7 @@
     padding: 5px 8px;
     border: unset;
     font-size: 15px;
+
     @include tablet {
       display: block !important;
       width: 100% !important;
@@ -109,16 +332,16 @@
   }
 }
 
-.open {
-  width: 100%;
-}
+
 .open2 {
   border: 1px solid;
   width: 100%;
 }
+
 .close2 {
   width: 25%;
 }
+
 .close {
   width: 0%;
   display: none;
@@ -126,38 +349,16 @@
 
 .big__screen {
   display: none;
+
   @include tablet {
     display: flex;
   }
 }
+
 .small__screen {
   display: flex;
 
   @include tablet {
     display: none;
   }
-}
-
-.navbar__icons-container {
-
-    &-icon {
-position: relative;
-    }
-
-    &-cart-count {
-      position: absolute;
-      top: -3px;
-      right: 13px;
-      background: #ff0000;
-      color: white;
-      border-radius: 50%;
-      font-size: 12px;
-      font-weight: bold;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
 }
