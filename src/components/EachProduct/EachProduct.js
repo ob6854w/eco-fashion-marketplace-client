@@ -18,9 +18,7 @@ function EachProduct({ eachProduct }) {
         to={`/product-details/${eachProduct.id}`}
       >
         <div className="products__item">
-          {/* <div className="products__item-img-container"> */}
             <img src={eachProduct.image_url} alt="" className="products__item-img" />
-          {/* </div> */}
           <p className="products__item-text" style={{ padding: "0 5px" }}>
             {eachProduct.name}
           </p>

@@ -185,7 +185,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        {/* <HiBars3 className="navbar__container-icon" /> */}
         <div className="navbar__container-wrapper">
           <img className="navbar__logo" src={logo} alt="logo" />
           <div className="navbar__container-menu">
@@ -215,27 +214,6 @@ function Navbar() {
           >
             Marketplace
           </Link>
-          {/* <div className={`search big__screen`}>
-            <IoIosSearch className="navbar__icons-container-icon" />
-            <input
-              type="search"
-              placeholder="Search"
-              className={`search__input`}
-            />
-          </div> */}
-          {/* <div className={`search small__screen ${open ? "open2" : "close2"}`}>
-            <IoIosSearch
-              className="navbar__icons-container-icon"
-              onClick={() => {
-                setOpen(!open);
-              }}
-            />
-            <input
-              type="search"
-              placeholder="Search"
-              className={`search__input ${open ? "open" : "close"}`}
-            />
-          </div> */}
           <div className="navbar__last-cont">
             <Link to="/add-to-cart" className="navbar__icons-container-icon">
               <CiShoppingCart />
@@ -246,16 +224,6 @@ function Navbar() {
             />
           </div>
         </div>
-
-        {/* <div className="navbar__button">
-          <Link to="/signup">
-            <button className="navbar___button-signup">Signup</button>
-          </Link>
-          <Link to="/login">
-            <button className="navbar___button-login">Login</button>
-          </Link>
-        </div> */}
-
         <div className="navbar__small-screen small__screen">
           <div
             id="menu"
@@ -275,33 +243,6 @@ function Navbar() {
                 {title}
               </Link>
             ))}
-            {/* <Link
-              to="/"
-              className={`navbar__link ${active ? "active" : ""}`}
-              onClick={() => {
-                setActive(!false);
-              }}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`navbar__link ${active ? "active" : ""}`}
-              onClick={() => {
-                setActive(!false);
-              }}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className={`navbar__link ${active ? "active" : ""}`}
-              onClick={() => {
-                setActive(!false);
-              }}
-            >
-              Contact
-            </Link> */}
           </div>
         </div>
       </div>
